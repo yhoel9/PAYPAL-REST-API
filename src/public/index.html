@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>principal page</title>
+</head>
+<body>
+    <button>checkout</button>
+    <script>
+        const checkout = document.getElementById('checkout')
+
+        checkout.addEventListener('click', async function(){
+            const response = await fetch('/categorias', {
+                method: 'GET',
+            })
+            const data = await response.json();
+            console.log(data);
+            
+            window.location.href= 'syscom.controllers.js';
+        })
+    </script>
+    
+</body>
+</html>
